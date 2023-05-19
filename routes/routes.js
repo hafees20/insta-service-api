@@ -1,48 +1,12 @@
-import express from "express";
+import express from 'express';
+import authRouter from './auth/auth-routes.js';
+import postRouter from './post/post-routes.js';
+import profileRouter from './profile/profile-routes.js';
 
-const router=express.Router()
+const router = express.Router();
 
+router.use(authRouter);
+router.use(postRouter);
+router.use(profileRouter)
 
-router.get('/api/home', (req,res)=>{
-    res.send("Home")
-});
-
-router.post('/api/create', (req, res) => {
-    res.send("Created Post")
-});
-
-router.post('/api/signup',  (req, res) => {
-    res.send("Signed up")
-})
-
-router.post('/api/login', (req, res) => {
-    res.send("Signed up")
-})
-
-router.put('/api/dpchange', (req,res)=>{
-    res.send("DP Changed")
-})
-
-router.put('/api/likepost',  (req, res) => {
-    res.send("liked")
-})
-
-router.put('/api/unlikepost', (req, res) => {
-    res.send("Unliked")
-})
-
-router.get('/api/profile/:username',(req, res) => {
-    res.send("User Profile")
-})
-
-router.put('/api/follow', (req, res) => {
-    res.send("Followed")
-
-})
-
-router.put('/api/unfollow', (req, res) => {
-    res.send("Unfollowed")
-})
-
-
-export default router
+export default router;
