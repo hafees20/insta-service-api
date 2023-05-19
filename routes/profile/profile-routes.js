@@ -1,13 +1,23 @@
 import express from 'express'
+import { ENDPOINTS } from '../../constants/constants.js'
 
 const profileRouter=express.Router()
 
-profileRouter.put('/api/dpchange', (req,res)=>{
+profileRouter.get(ENDPOINTS.PROFILE,(req, res) => {
+    res.status(200).json({"User Profile":req.params.username})
+})
+
+profileRouter.put(ENDPOINTS.CHANGEDP, (req,res)=>{
     res.send("DP Changed")
 })
 
-profileRouter.get('/api/profile/:username',(req, res) => {
-    res.send("User Profile")
+profileRouter.put(ENDPOINTS.FOLLOW, (req, res) => {
+    res.send("Followed")
+
+})
+
+profileRouter.put(ENDPOINTS.UNFOLLOW, (req, res) => {
+    res.send("Unfollowed")
 })
 
 export default profileRouter
