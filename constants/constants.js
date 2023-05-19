@@ -9,3 +9,16 @@ export const CREDENTIALS = {
     CLOUDINARY_SECRET: process.env.CLOUDINARY_SECRET,
     DB_NAME:process.env.DB_NAME
 }
+
+export const ENDPOINTS={
+    SIGNUP:'/api/signup',
+    SIGNIN:'/api/login',
+    HOME:'/api/home',
+    CREATE:'/api/create',
+    LIKE:'/api/likepost',
+    UNLIKE:'/api/unlikepost',
+    FOLLOW:'/api/follow',
+    UNFOLLOW:'/api/unfollow',
+    CHANGEDP:'/api/dpchange',
+    PROFILE:'/api/profile/:username'
+}
