@@ -1,23 +1,16 @@
 import express from "express";
 import { ENDPOINTS } from "../../constants/constants.js";
+import { PostController } from "../../controllers/post/post-controller.js";
 
 const postRouter=express.Router()
 
-postRouter.get(ENDPOINTS.HOME, (req,res)=>{
-    res.send("Home")
-});
+postRouter.get(ENDPOINTS.HOME,PostController.home);
 
-postRouter.post(ENDPOINTS.CREATE, (req, res) => {
-    res.send("Created Post")
-});
+postRouter.post(ENDPOINTS.CREATE,PostController.createPost);
 
-postRouter.put(ENDPOINTS.LIKE,  (req, res) => {
-    res.send("liked")
-})
+postRouter.put(ENDPOINTS.LIKE,PostController.likePost);
 
-postRouter.put(ENDPOINTS.UNLIKE, (req, res) => {
-    res.send("Unliked")
-})
+postRouter.put(ENDPOINTS.UNLIKE,PostController.unlikePost);
 
 export default postRouter
 
