@@ -22,3 +22,7 @@ export const ENDPOINTS={
     CHANGEDP:'/api/dpchange',
     PROFILE:'/api/profile/:username'
 }
+
+export const AUTH={
+    NO_DP:"nodp.svg"
+}
