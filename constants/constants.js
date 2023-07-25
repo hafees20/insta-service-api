@@ -30,7 +30,8 @@ export const AUTH = {
 }
 
 export const STORAGE = {
-    POSTS: "./images/posts/"
+    POSTS: "./images/posts/",
+    DP:"./images/dp/"
 }
 export const FILE_TYPE = {
     IMG: "img"
